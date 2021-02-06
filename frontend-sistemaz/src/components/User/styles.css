@@ -1,0 +1,62 @@
+fieldset {
+  border: 2px groove #7798ca;
+  min-width: 30rem;
+}
+
+label,
+legend {
+  margin-left: 0.5rem;
+  margin-bottom: 0.2rem;
+  color: #7798ca;
+}
+
+input {
+  padding: 0.4rem;
+  width: 10rem;
+  height: 1.4rem;
+  border-radius: 5px;
+  border: 0.1rem solid #cdcdcd;
+  /* outline-color: #cdcdcd; */
+  /* border-color: #cdcdcd; */
+}
+
+input:focus {
+  outline: none;
+  /* outline-color: #cdcdcd; */
+  border: 0.1rem solid #cdcdcd;
+  /* border-color: #cdcdcd; */
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.all-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-row {
+  margin-bottom: 0.7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.custom-label {
+  margin-right: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bottom-buttons {
+  margin-left: 40rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}

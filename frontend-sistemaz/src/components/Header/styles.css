@@ -1,0 +1,32 @@
+.text {
+  color: white;
+}
+
+.system-title {
+  font-size: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5383ff;
+
+  max-height: 4.5rem;
+}
+
+.greetings-logout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.page-title {
+  font-size: 0.7rem;
+  margin-left: 4rem;
+  max-width: 10rem;
+
+  text-align: center;
+}

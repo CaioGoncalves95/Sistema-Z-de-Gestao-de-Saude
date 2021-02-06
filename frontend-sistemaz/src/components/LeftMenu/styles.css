@@ -1,0 +1,39 @@
+.option-block {
+  width: 30%;
+  max-width: 19rem;
+  margin: 0px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.option-top,
+.option-mid,
+.option-bottom {
+  outline: none;
+  border: 0;
+  margin: 0;
+  color: white;
+  background-color: #7798ca;
+  height: 3.5rem;
+  width: 19rem;
+  padding: 0.2rem;
+  font-size: 1.3rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.option-top {
+  border-radius: 5px 5px 0 0;
+}
+.option-bottom {
+  border-radius: 0 0 5px 5px;
+}
+
+.option-bottom:hover,
+.option-top:hover,
+.option-mid:hover {
+  background-color: rgb(224, 222, 222);
+  color: #7798ca;
+}

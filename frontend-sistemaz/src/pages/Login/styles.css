@@ -1,0 +1,16 @@
+#page-login {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #b8c8f1;
+}
+
+#header {
+  font-size: 3.5rem;
+  color: white;
+}
