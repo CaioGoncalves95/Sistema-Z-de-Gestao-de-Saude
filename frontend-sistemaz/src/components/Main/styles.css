@@ -1,6 +1,7 @@
 .main {
   width: 70%;
-  height: 48rem;
+  min-height: 48rem;
+  max-height: 48rem;
   border-radius: 5px;
   background-color: #b8c8f1;
   display: flex;

@@ -22,6 +22,7 @@ const Main = ({ page }) => {
   const [actionToTake, setActionToTake] = useState();
   const [open, setOpen] = useState(false);
   const [prontuary, setProntuary] = useState();
+  const [pacientName, setPacientName] = useState();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -38,9 +39,10 @@ const Main = ({ page }) => {
   };
 
   const handleForward = async () => {
-    let prontNumber = document.getElementById('prontuario').value
+    let prontNumber = document.getElementById('prontuario').value;
     setProntuary(prontNumber);// console.log(document.getElementById('prontuario').value);
     const response = await axios.get(`http://localhost:3010/user/checkProntuary/${prontNumber}`);
+    if(response.data && response.data.name) setPacientName(response.data.name);
     if(!response) return
     if(actionToTake === 'searchMedicalRecord') {
       setsearchMedicalRecord(true);
@@ -65,7 +67,7 @@ const Main = ({ page }) => {
       if (includeExam) {
         render = <Exam prontuary={prontuary}/>
       } else if(searchMedicalRecord) {
-        render = <MedicalRecord />
+        render = <MedicalRecord prontuaryNumber={prontuary} pacientName={pacientName}/>
       } else {
         render = <>
                     <Action title={'Pesquisar prontuário'} type={'search'} action={() => { 

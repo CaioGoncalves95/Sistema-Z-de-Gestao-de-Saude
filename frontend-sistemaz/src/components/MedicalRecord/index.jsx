@@ -4,13 +4,16 @@ import './styles.css';
 
 import Record from './Record';
 
-const MedicalRecord = () => {
+const MedicalRecord = ({pacientName, prontuaryNumber}) => {
     return (
         <div className="wrapper-medical-record">
             <h1>Prontuário</h1>
-            <p>13829 - José da Silva</p>
-            <Record title={"Exames"}/>
-            <Record title={"Evoluções"}/>
+            <p>{prontuaryNumber} - {pacientName}</p>
+            <Record title={"Exames"} prontuaryNumber={prontuaryNumber}/>
+            <Record title={"Evoluções"} prontuaryNumber={prontuaryNumber}/>
+            <Record title={"Consultas"} prontuaryNumber={prontuaryNumber}/>
+            <Record title={"Procedimentos"} prontuaryNumber={prontuaryNumber}/>
+            <Record title={"Internações"} prontuaryNumber={prontuaryNumber}/>
         </div>
     );
 }

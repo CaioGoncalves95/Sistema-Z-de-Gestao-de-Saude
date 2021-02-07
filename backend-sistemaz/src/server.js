@@ -27,6 +27,8 @@ mongoose
 const User = require("./models/user-model");
 const ExamType = require("./models/examType-model");
 const ExamAgenda = require("./models/examAgenda-model");
+const ExamRecord = require("./models/examRecord-model");
+const Evolution = require("./models/evolutionRecord-model");
 const Schedule = require("./models/schedule-model");
 const ProntuarySequence = require("./models/prontuary-sequence");
 

@@ -17,26 +17,26 @@ import Button from "../Button";
 const LoginBox = () => {
   
   let history = useHistory();
-  const [user, setUser] = useState();
-  const [password, setPassword] = useState();
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
   const [logged, setLogged] = useState(false);
-  const [accessProfile, setAccessProfile] = useState();
+  const [accessProfile, setAccessProfile] = useState("");
   const [openError, setOpenError] = useState(false);
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     const response = await axios.post('http://localhost:3010/user/login',{
       email: user,
       password: password
     });
 
-    if(response.status !== 401) {
+    if(response.status === 200) {
       setAccessProfile(response.data.accessProfile);
       setLogged(true);
-    } else {
-      setOpenError(true);
+    } else if(response.status === 401){
+      openErrorDialog();
     }
-    // console.log(response.data)
 
   };
 

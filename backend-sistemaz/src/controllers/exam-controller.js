@@ -3,6 +3,8 @@ const ExamType = mongoose.model("ExamType");
 const ExamAgenda = mongoose.model("ExamAgenda");
 const Schedule = mongoose.model("Schedule");
 const ProntuarySequence = mongoose.model("ProntuarySequence");
+const ExamRecord = mongoose.model("ExamRecord");
+const EvolutionRecord = mongoose.model("EvolutionRecord");
 
 exports.getExamsNames = async (req, res) => {
   try {
@@ -102,6 +104,63 @@ exports.getAvailableHoursByDate = async (req, res) => {
   } catch (e) {
     res.status(500).send({
       message: "Falha ao processar requisição: getAvailableHoursByDate",
+    });
+  }
+};
+
+exports.getExamHistory = async (req, res) => {
+  try {
+    const { prontuaryNumber } = req.body;
+
+    const examHistoric = await ExamRecord.find({
+      prontuaryNumber: prontuaryNumber,
+    });
+
+    res.status(200).json(examHistoric);
+  } catch (e) {
+    res.status(500).send({
+      message: "Falha ao processar requisição: getExamHistoric",
+    });
+  }
+};
+
+exports.createExamHistory = async (req, res) => {
+  try {
+    const examRecord = new ExamRecord(req.body);
+    await examRecord.save();
+    res.status(200).json(examRecord);
+  } catch (e) {
+    res.status(500).send({
+      message: "Falha ao processar requisição: createExamHistory",
+    });
+  }
+};
+
+exports.getEvolutionHistory = async (req, res) => {
+  try {
+    const { prontuaryNumber } = req.body;
+
+    const evolutionHistoric = await EvolutionRecord.find({
+      prontuaryNumber: prontuaryNumber,
+    });
+
+    res.status(200).json(evolutionHistoric);
+  } catch (e) {
+    res.status(500).send({
+      message: "Falha ao processar requisição: getEvolutionHistory",
+    });
+  }
+};
+
+exports.createEvolutionHistory = async (req, res) => {
+  try {
+    const evolutionRecord = new EvolutionRecord(req.body);
+    await evolutionRecord.save();
+
+    res.status(200).json(evolutionRecord);
+  } catch (e) {
+    res.status(500).send({
+      message: "Falha ao processar requisição: createEvolutionHistory",
     });
   }
 };

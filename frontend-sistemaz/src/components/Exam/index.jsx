@@ -28,7 +28,7 @@ const Exam = ({prontuary}) => {
         const response = await axios.get(`http://localhost:3010/exam/examNames`);
         let exams = response.data.map(exam => exam.name);
         setExamTypes(exams);
-        console.log(prontuary);
+        // console.log(prontuary);
     }, []);
 
     useEffect(async () => {

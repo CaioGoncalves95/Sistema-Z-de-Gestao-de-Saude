@@ -10,6 +10,10 @@ router.get(
   "/availableAgenda/:examName&:unit&:month&:day",
   controller.getAvailableHoursByDate
 );
+router.post("/examHistory", controller.getExamHistory);
+router.post("/examHistory/create", controller.createExamHistory);
+router.post("/evolutionHistory", controller.getEvolutionHistory);
+router.post("/evolutionHistory/create", controller.createEvolutionHistory);
 // router.get("/createFirstProntuary", controller.createFirstProntuaryNumber);
 
 router.post("/schedule", controller.createSchedule);

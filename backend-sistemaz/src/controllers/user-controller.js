@@ -47,7 +47,7 @@ exports.checkProntuary = async (req, res) => {
       return;
     }
 
-    res.status(200).send(true);
+    res.status(200).json(prontuaryExists);
   } catch (e) {
     res.status(400).send({
       message: "Erro ao executar requisição: checkProntuary",
@@ -70,7 +70,7 @@ exports.login = async (req, res) => {
       res.status(401).send("Usuário e/ou senha inválidos");
     }
   } catch (e) {
-    res.status(400).send({
+    res.status(401).send({
       message: "Erro ao executar requisição: login",
     });
   }
